@@ -10,7 +10,7 @@ public class CountingNumbersInFile {
 
     }
 
-    private static void readingFile(){
+    private static void readingFile() {
         String fileName = "liczby2.txt";
         File file = new File(fileName);
         int[] tab = new int[10];
@@ -19,7 +19,7 @@ public class CountingNumbersInFile {
         try {
 
             Scanner scanner = new Scanner(file);
-            while (scanner.hasNextInt()){
+            while (scanner.hasNextInt()) {
                 int digit = scanner.nextInt();
                 tab[digit] += 1;
             }
@@ -27,10 +27,10 @@ public class CountingNumbersInFile {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        int i=0;
+        int i = 0;
         int numberOfPresentNumbers = 0;
-        for (int obj : tab){
-            if(obj != 0 ){
+        for (int obj : tab) {
+            if (obj != 0) {
                 numberOfPresentNumbers++;
             }
             System.out.println(i + "   " + obj);
@@ -40,13 +40,13 @@ public class CountingNumbersInFile {
         mostFrequentNumber(tab);
     }
 
-    private static void mostFrequentNumber(int[] tab){
-        int max =tab[0];
-        int maxIndeks =0;
-        for(int i = 0; i < tab.length; i++){
-            if (tab[i] > max){
+    private static void mostFrequentNumber(int[] tab) {
+        int max = tab[0];
+        int maxIndeks = 0;
+        for (int i = 0; i < tab.length; i++) {
+            if (tab[i] > max) {
                 max = tab[i];
-                maxIndeks =i;
+                maxIndeks = i;
             }
         }
         System.out.println("Most frequent number: " + maxIndeks);
