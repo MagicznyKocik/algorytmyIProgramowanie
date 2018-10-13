@@ -50,7 +50,5 @@ public class CountingNumbersInFile {
             }
         }
         System.out.println("Most frequent number: " + maxIndeks);
-
     }
-
 }
