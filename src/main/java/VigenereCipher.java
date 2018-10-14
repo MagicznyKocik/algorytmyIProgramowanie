@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class VigenereCipher {
 
     private static final int ALPHABET_LENGTH = 26;
+    private static final int ASCII_NUMBER_OF_A = 65;
 
     public static void main(String[] args) {
         String input = userInput();
@@ -12,11 +13,11 @@ public class VigenereCipher {
     }
 
     private static char[][] generating2DCharArray() {
-        char[][] table = new char[26][26];
+        char[][] table = new char[ALPHABET_LENGTH][ALPHABET_LENGTH];
         int counter = 0;
-        for (int i = 0; i < 26; i++) {
-            for (int j = 0; j < 26; j++) {
-                table[i][j] = (char) (((j + counter) % 26) + 65);
+        for (int i = 0; i < ALPHABET_LENGTH; i++) {
+            for (int j = 0; j < ALPHABET_LENGTH; j++) {
+                table[i][j] = (char) (((j + counter) % ALPHABET_LENGTH) + ASCII_NUMBER_OF_A);
                 // System.out.print(table[i][j]);
             }
             counter++;
