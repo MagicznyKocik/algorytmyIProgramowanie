@@ -38,14 +38,12 @@ public class FindingPatterns {
     }
 
     public static void print2DArray(int[][] tab) {
+        System.out.print("(");
 
         for (int i = 0; i < tab.length; i++) {
-            System.out.print("{ ");
-            for (int j = 0; j < tab[0].length; j++) {
-                System.out.print(tab[i][j] + " ");
+            System.out.print("{" + tab[i][0] + " " + tab[i][1] + "}");
             }
-            System.out.print(" }");
-        }
+        System.out.print(")");
     }
 
 }
