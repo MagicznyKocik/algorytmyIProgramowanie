@@ -1,9 +1,6 @@
 package sorting;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 import static java.util.Collections.sort;
 
@@ -16,7 +13,22 @@ public class EmbeddedSort {
     }
 
     private static void sort(List<Integer> numbers) {
-        Collections.sort(numbers);
+        Collections.sort(numbers, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+//                if(o1%2==0 && o2%2==0){
+//                    return o1.compareTo(o2);
+//                } else
+                if (o1 % 2 == 0 && o2 % 2 != 0) {
+                    return -1;
+                } else if (o1 % 2 != 0 && o2 % 2 == 0) {
+                    return 1;
+                } else return o1.compareTo(o2);
+
+
+            }
+        });
+
     }
 
     private static List<Integer> generateNumbers() {
